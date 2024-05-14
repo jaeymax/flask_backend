@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
 import pandas as pd
 # Load the dataset
@@ -113,7 +114,7 @@ def display_results(predictions):
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/')
 def home():
@@ -125,7 +126,7 @@ def home():
 def predict():
     # Get user input from request
     user_input = request.json
-    
+    print(user_input)
     # Preprocess input data
     input_data = pd.DataFrame(user_input, index=[0])
     
