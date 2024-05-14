@@ -9,9 +9,9 @@ data = pd.read_csv('heart.csv')
 import matplotlib.pyplot as plt
 import seaborn as sns
 # Set the aesthetics for the plots
-sns.set(style="whitegrid")
+#sns.set(style="whitegrid")
 # Histograms for all numeric columns
-data.hist(figsize=(15, 12))
+#data.hist(figsize=(15, 12))
 #plt.show()
 
 #print(data.describe())
@@ -19,8 +19,8 @@ data.hist(figsize=(15, 12))
 #print("Correlation with the target variable")
 #print(data.corr()['target'].sort_values())
 
-plt.figure(figsize=(8, 6))
-sns.heatmap(data.corr(), annot=True, cmap='coolwarm', fmt="0.1f", linewidths= 0.5)
+#plt.figure(figsize=(8, 6))
+#sns.heatmap(data.corr(), annot=True, cmap='coolwarm', fmt="0.1f", linewidths= 0.5)
 #plt.show()
 
 from sklearn.model_selection import train_test_split
@@ -52,24 +52,24 @@ f1 = f1_score(y_test, y_pred)
 #print("Confusion Matrix:\n", conf_matrix)
 #print("Classification Report:\n", classification_report(y_test, y_pred))
 
-plt.figure(figsize=(5, 5))
-sns.heatmap(conf_matrix, annot=True, fmt="d", linewidths=.5, cmap='Blues', square=True, cbar=False)
-plt.xlabel('Predicted label')
-plt.ylabel('True label')
-plt.title('Confusion Matrix')
-plt.xticks([0.5, 1.5], ['No Heart Disease', 'Heart Disease'])
-plt.yticks([0.5, 1.5], ['No Heart Disease', 'Heart Disease'], rotation=0)
+#plt.figure(figsize=(5, 5))
+#sns.heatmap(conf_matrix, annot=True, fmt="d", linewidths=.5, cmap='Blues', square=True, cbar=False)
+#plt.xlabel('Predicted label')
+#plt.ylabel('True label')
+#plt.title('Confusion Matrix')
+#plt.xticks([0.5, 1.5], ['No Heart Disease', 'Heart Disease'])
+#plt.yticks([0.5, 1.5], ['No Heart Disease', 'Heart Disease'], rotation=0)
 #plt.show()
 
 performance_data = {'Accuracy': [accuracy], 'Precision': [precision], 'Recall': [recall], 'F1-Score': [f1]}
 performance_df = pd.DataFrame(performance_data)
 # Plotting the data
-plt.figure(figsize=(6, 4))
-sns.barplot(data=performance_df)
-plt.title('Model Performance Metrics')
-plt.ylabel('Score')
-plt.ylim(0, 1)  
-plt.xticks(range(len(performance_data)), list(performance_data.keys()))
+#plt.figure(figsize=(6, 4))
+#sns.barplot(data=performance_df)
+#plt.title('Model Performance Metrics')
+#plt.ylabel('Score')
+#plt.ylim(0, 1)  
+#plt.xticks(range(len(performance_data)), list(performance_data.keys()))
 #plt.show()
 
 
